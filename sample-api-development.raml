@@ -1,0 +1,37 @@
+#%RAML 1.0
+types:
+  Contacts:
+    properties:
+      FirstName:
+        example: Example
+        type: string
+      LastName:
+        example: Example
+        type: string
+      Email:
+        example: Example
+        type: string
+      Company:
+        example: Example
+        type: string
+title: Get Contacts API
+mediaType:
+  - application/json
+version: "1"
+protocols:
+  - HTTP
+  - HTTPS
+/contacts:
+  get:
+    responses:
+      "200":
+        body:
+          application/json:
+            type: Contacts
+            example:
+              strict: true
+              value:
+                FirstName: Edward
+                LastName: Walker
+                Email: edward@gmail.com
+                Company: Tesla
